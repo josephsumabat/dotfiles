@@ -10,9 +10,12 @@ call plug#begin('~/.vim/plugged')
 "fzf
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'junegunn/seoul256.vim'
+
 
 "Colorscheme
 Plug 'romainl/flattened'
+Plug 'altercation/vim-colors-solarized'
 
 "indent lines
 Plug 'Yggdroot/indentLine'
@@ -66,8 +69,8 @@ let g:signify_sign_show_count = 0
 "let g:indentLine_conceallevel = 0
 
 "solarized theme
-colorscheme flattened_dark
-"ctermbg=none
+colorscheme seoul256
+set background=dark
 
 syntax on
 filetype plugin indent on

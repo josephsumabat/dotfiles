@@ -38,6 +38,10 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+# Use bash-completion, if available
+[[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
+    . /usr/share/bash-completion/bash_completion
+
 if [ -f "~/.git-completion.bash" ]
   then source "~/.git-completion.bash"
 fi
@@ -119,3 +123,13 @@ fi
 
 PS1="\[$BASE01\]\t\[$BLUE\][\h]\[$GREEN\][\u] \[$CYAN\]\w\[$GREEN\] \$ \[$RESET\]"
 
+
+## Activate `fnm`: https://github.com/Schniz/fnm
+#if command -v fnm >/dev/null; then
+#    eval "$(fnm env --use-on-cd)"
+#fi
+#
+## Activate `direnv`: https://direnv.net/
+#if command -v direnv >/dev/null; then
+#    eval "$(direnv hook bash)"
+#fi

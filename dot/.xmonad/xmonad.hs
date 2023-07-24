@@ -37,7 +37,7 @@ myStartupHook = do
     --spawn "$HOME/.xmonad/run-xmobar.sh"
     spawn "nm-applet &"
     --spawnPipe $ "xmobar -x " ++ show sid
-    --spawn "xrdb"
+    spawn "xrdb ~/.Xresources"
     spawn "$HOME/.xprofile"
 
 tabConfig = def {
@@ -99,10 +99,13 @@ myConfig = (ewmh $ docks $  desktopConfig
         {
             terminal = "urxvt"
             -- Mod key as windows key 
-          --, modMask = mod4Mask
-            -- Mod key as alt
-          , modMask = mod1Mask
-          , normalBorderColor = "#073642"
+          , modMask = mod4Mask
+            -- Mod key as default alt
+          --, modMask = mod1Mask
+          -- Solarized border
+          --, normalBorderColor = "#073642"
+          -- seoul256 border
+          , normalBorderColor = "#545454"
           --, workspaces = myWorkspaces
           --, focusedBorderColor = "#b58900"
           , focusedBorderColor = yellow
